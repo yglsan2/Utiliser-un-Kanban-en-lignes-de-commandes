@@ -1,0 +1,162 @@
+1. gh project close
+Explication : Archive un projet (ne le supprime pas).
+Commande CLI :
+
+```gh project close <ID-PROJET> --owner <USERNAME-OU-ORG> ```
+Équivalent GUI :
+Aller dans le projet → ⚙️ Settings → "Close project" en bas de page.
+
+2. gh project copy
+Explication : Clone un projet existant.
+Commande CLI :
+
+```gh project copy <ID-PROJET-SOURCE> --title "NOM_COPIE" --owner <OWNER>```
+Équivalent GUI :
+Projet → ⋮ (Menu) → "Make a copy" → Remplir les détails.
+
+3. gh project create
+Explication : Crée un nouveau projet Kanban.
+Commande CLI :
+
+```gh project create --title "NOM_PROJET" --owner <OWNER> --format beta --visibility private````
+Équivalent GUI :
+Profil → "Projects" → "New project" → Choisir "Beta" → "Kanban".
+
+4. gh project delete
+Explication : Supprime définitivement un projet.
+Commande CLI :
+
+```gh project delete <ID-PROJET> --owner <OWNER>```
+Équivalent GUI :
+Projet → ⚙️ Settings → "Delete project" en bas de page.
+
+5. gh project edit
+Explication : Modifie le titre, la description ou la visibilité.
+Commande CLI :
+
+```gh project edit <ID-PROJET> --title "NOUVEAU_TITRE" 
+					  --description "..." 
+					  --visibility public```
+Équivalent GUI :
+Projet → ⚙️ Settings → Éditer les champs manuellement.
+
+6. gh project field-create
+Explication : Ajoute un champ personnalisé (ex: "Priorité").
+Commande CLI :
+
+‘’’gh project field-create <ID-PROJET> --name "Priorité" --data-type SINGLE_SELECT --options "Haute,Moyenne,Basse" ```
+Équivalent GUI :
+Projet → ⚙️ Table settings → "Add field" → Choisir le type.
+
+7. gh project field-delete
+Explication : Supprime un champ personnalisé.
+Commande CLI :
+
+```gh project field-delete <ID-CHAMP>```
+Équivalent GUI :
+Projet → ⚙️ Table settings → ⋮ sur un champ → "Delete field".
+
+8. gh project field-list
+Explication : Liste les champs du projet.
+Commande CLI :
+
+```gh project field-list <ID-PROJET> --owner <OWNER>```
+Équivalent GUI :
+Projet → ⚙️ Table settings → Liste des champs visibles.
+
+9. gh project item-add
+Explication : Ajoute une issue/PR existante au projet.
+Commande CLI :
+
+```gh project item-add <ID-PROJET> --url "https://github.com/OWNER/REPO/issues/1"```
+Équivalent GUI :
+Projet → "+ Add item" → "Add existing item" → Coller l'URL.
+
+10. gh project item-archive
+Explication : Archive un élément (le retire du tableau).
+Commande CLI :
+
+```gh project item-archive <ID-ITEM>```
+Équivalent GUI :
+Projet → Clic sur l'élément → ⋮ → "Archive item".
+
+11. gh project item-create
+Explication : Crée une nouvelle tâche dans le projet.
+Commande CLI :
+
+```gh project item-create <ID-PROJET> --title "TITRE" --body "DESCRIPTION"```
+Équivalent GUI :
+Projet → "+ Add item" → "New item" → Remplir les détails.
+
+12. gh project item-delete
+Explication : Supprime un élément du projet.
+Commande CLI :
+
+```gh project item-delete <ID-ITEM>```
+Équivalent GUI :
+Projet → Clic sur l'élément → ⋮ → "Delete from project".
+
+13. gh project item-edit
+Explication : Modifie un champ d'un élément (ex: statut).
+Commande CLI :
+
+```gh project item-edit --id <ID-ITEM> --field-id <ID-CHAMP> --value "NOUVELLE_VALEUR"```
+Équivalent GUI :
+Projet → Clic sur l'élément → Éditer le champ souhaité.
+
+14. gh project item-list
+Explication : Liste tous les éléments du projet.
+Commande CLI :
+
+```gh project item-list <ID-PROJET> --owner <OWNER>```
+Équivalent GUI :
+Projet → Tous les éléments sont visibles dans le tableau.
+
+15. gh project link
+Explication : Lie le projet à un dépôt ou une équipe.
+Commande CLI :
+
+```gh project link <ID-PROJET> --repo "OWNER/REPO" --team "NOM-ÉQUIPE"```
+Équivalent GUI :
+Projet → ⚙️ Settings → "Linked repositories/teams" → "Link".
+
+16. gh project list
+Explication : Liste tous les projets.
+Commande CLI :
+
+```gh project list --owner <OWNER>```
+Équivalent GUI :
+Profil → Onglet "Projects".
+
+17. gh project mark-template
+Explication : Définit le projet comme modèle.
+Commande CLI :
+
+```gh project mark-template <ID-PROJET>```
+Équivalent GUI :
+Projet → ⚙️ Settings → "Template" → Activer "Make template".
+
+18. gh project unlink
+Explication : Détache un dépôt/équipe du projet.
+Commande CLI :
+
+```gh project unlink <ID-PROJET> --repo "OWNER/REPO" --team "NOM-ÉQUIPE"```
+Équivalent GUI :
+Projet → ⚙️ Settings → "Linked repositories/teams" → ⋮ → "Unlink".
+
+19. gh project view
+Explication : Affiche les détails du projet.
+Commande CLI :
+
+```gh project view <ID-PROJET> --owner <OWNER>```
+Équivalent GUI :
+Projet → Page d'aperçu du projet.
+
+Pour récupérer les IDs nécessaires :
+    • Liste des projets :
+      
+      ```gh project list --json id,title,url```
+    • Détails d'un projet (IDs des champs/éléments) :
+      
+      ```gh project view <ID-PROJET> --json id,title,fields,items```
+
